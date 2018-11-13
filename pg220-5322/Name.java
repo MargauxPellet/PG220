@@ -39,7 +39,7 @@ public class Name {
 	public static void main(String[] args) {
 	try {
 		Scanner sc = new Scanner (System.in);
-		String nom = args[4];
+		String nom = args[2];
 
 		Date dat= new Date();
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy") ;
