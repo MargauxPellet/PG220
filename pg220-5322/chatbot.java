@@ -18,16 +18,28 @@ public class Name{
 		this.size = size;
 	}
 
-	public void give_name(){
-		this.nom = nom;
+	public give_name(){
+		 return this.nom = nom;
 	}
-	public  give_size(){
+	public give_size(){
 		return this.size = size;
+	}
+	public void setname(){
+		this.nom = nom ; 
+	}
+
+	public void setsizemax(){
+		this.size = size ; 
 	}
 
 	public static void main(String[] args) {
 	try {
 		Scanner sc = new Scanner (System.in);
+		Date dat= new Date();
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy") ;
+		String dt= dateFormat.format(dat) ;
+		System.out.println("Salut"nom ) ; 
+		System.out.println(dt);
 
 	}
 }
