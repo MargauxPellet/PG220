@@ -1,13 +1,13 @@
 import java.util.Scanner;
 import java.util.Date;
 
-public class Name {
+public class Name{
 
 	private int size = 10;
 
 	private String nom;
 
-	public Name{
+	public Name(){
 		super();
 		this.nom = new Name();
 		this.size = new Name();
@@ -37,7 +37,7 @@ public class Name {
 	}
 
 	public static void main(String[] args) {
-	try {
+	//try {
 		Scanner sc = new Scanner (System.in);
 		String nom = args[2];
 
@@ -47,7 +47,7 @@ public class Name {
 		System.out.println("Salut"+ nom.description() ) ; 
 		System.out.println(dt);
 
-		}
+		//}
 	}
 }
 
