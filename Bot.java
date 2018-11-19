@@ -4,7 +4,8 @@ import java.lang.*;
 import java.text.*;
 
 
-public class Bot{
+public class Bot
+{
 
 
     private static String name;
@@ -31,42 +32,45 @@ public class Bot{
             this.nombre = nombre ++;
         }
     }
+  public Bot(String name)
+  {
+    this.name=name;
+  }
 
+  public static void main (String[] args)
+  {
+    String argument = args[0];
+    String name = args[1];
+    while (true)
+    {
+      System.out.println("[" + name + "]");
 
-    public static void main (String[] args){
-        try{
-            while (true){
-                if (args[0] == "-p"){
-                    String name = args[1];
-                    System.out.println("[" + name + "]");
-                    Scanner in = new Scanner(System.in);
-                    String call = in.nextLine();
+      Scanner in = new Scanner(System.in);
+      String call = in.nextLine();
+      //call.trim();
 
-                    call.trim();
-                    if (call == "@Hello"){
-                        Date dat= new Date();
-                        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy") ;
-                        String date = dateFormat.format(dat) ;
-                        Calendar cal = Calendar.getInstance();
-                        String hour = cal.get(Calendar.HOUR_OF_DAY)+"h "+cal.get(Calendar.MINUTE)+"m et "+cal.get(Calendar.SECOND)+"s";
+      if (call.equals("++"))
+      {
+        System.exit(0);
+      }
 
-                        System.out.println("Salut " + name + "! Nous sommes le " + date + "et il est " + hour);
-                    }
-                    else if (call == "++") {
-                        System.exit(0);
-                    }
-                    else {
-                        System.out.println(call);
-                    }
-                }
-            }
-        }
-        catch (ArgInvalide e) {
-        System.out.println(e);
-        } finally {
-            x = new Bot();
-            System.out.println(x.description());
-        }
+      else if (call.equals("@hello"))
+      {
+        Date dat= new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy") ;
+        String date = dateFormat.format(dat) ;
+
+        Calendar cal = Calendar.getInstance();
+        String hour = cal.get(Calendar.HOUR_OF_DAY) + " heures " + cal.get(Calendar.MINUTE) + " minutes et " + cal.get(Calendar.SECOND)+" secondes.";
+
+        System.out.println("[hello] Salut " + name + "! Nous sommes le " + date + " et il est " + hour);
+      }
+
+      else //if (call != "@hello" && call != "++")
+      {
+        System.out.println("[hello] " + call);
+      }
 
     }
+  }
 }
